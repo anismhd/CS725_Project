@@ -3,10 +3,10 @@
 
 ## Members
 
-23D0292 / Anis M Vengasseri 
-22D1264 / Moh. Zaid
-23m2153 / Ashwin 
-/ Vishnu T.S.
+1. 23D0292 / Anis M Vengasseri 
+2. 22D1264 / Moh. Zaid
+3. 23m2153 / Ashwin 
+4. / Vishnu T.S.
 
 
 
