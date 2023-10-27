@@ -60,3 +60,9 @@ NGA-West2 Database Flatfile- The Updated NGA-West2 database “flatfiles” are 
 The final file that will be used in the project is
 
 data/Updated_NGA_West2_flatfiles_part1/Updated_NGA_West2_Flatfile_RotD50_d005_public_version.xlsx
+
+## Final List of Paramters Considered for Study
+
+[Parameter List 01](figures/param1.png)
+[Parameter List 02](figures/param1.png)
+[Parameter List 03](figures/param1.png)
