@@ -23,6 +23,8 @@ The common parameters is peak ground accelartion (PGA), which is the highest gro
 Eventhough PGA provides intusion on ground shaking intensities, the behaviour of buildings/structures under ground motions are best described by Response Spectra.
 It represents the maximum response of a structure to ground motion at various frequencies. 
 In simpler terms, it shows how much a building or structure might shake at different levels of earthquake intensity, allowing engineers to design structures that can withstand these movements. 
-By using this tool, they can create safer and more resilient buildings that can better withstand the forces of an earthquake.
+By using this tool, they can create safer and more resilient buildings that can better withstand the forces of an earthquake. A typical process of estimating response spectra from ground motion is shown in figure below;
+
+![Alt text](https://ars.els-cdn.com/content/image/1-s2.0-S1738573316300067-gr1.jpg)
 
 ## PEER Database of Ground Motion
