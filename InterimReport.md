@@ -28,3 +28,9 @@ By using this tool, they can create safer and more resilient buildings that can 
 ![Alt text](https://ars.els-cdn.com/content/image/1-s2.0-S1738573316300067-gr1.jpg)
 
 ## PEER Database of Ground Motion
+
+## Development of Ground Motion Prediction Model
+
+## Preliminary Analysis
+
+## Road Map
