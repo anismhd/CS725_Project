@@ -63,6 +63,6 @@ data/Updated_NGA_West2_flatfiles_part1/Updated_NGA_West2_Flatfile_RotD50_d005_pu
 
 ## Final List of Paramters Considered for Study
 
-[Parameter List 01](figures/param1.png)
-[Parameter List 02](figures/param1.png)
-[Parameter List 03](figures/param1.png)
+![Parameter List 01](figures/param1.png)
+![Parameter List 02](figures/param1.png)
+![Parameter List 03](figures/param1.png)
