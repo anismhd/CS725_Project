@@ -1,5 +1,15 @@
 # Ground Motion Prediction using Deep Neural Network
 
+## Members
+
+| Roll No.     | Name |
+|----------|-------------------|
+| 23D0292  | Anis M Vengasseri |
+| 22D1264  | Moh. Zaid         |
+| 23m2153  | Ashwin            |
+| -------  | Vishnu T.S.       |
+
+
 ## Abstract
 Historically, seismic events have brought extensive destruction and distress to communities worldwide.
 These events have potential to generate economic losses of up to a staggering $200 billion (Japan, 1995).
@@ -26,11 +36,28 @@ In simpler terms, it shows how much a building or structure might shake at diffe
 By using this tool, they can create safer and more resilient buildings that can better withstand the forces of an earthquake. A typical process of estimating response spectra from ground motion is shown in figure below;
 
 ![Alt text](https://ars.els-cdn.com/content/image/1-s2.0-S1738573316300067-gr1.jpg)
+Historically people has attempted to prepare database of such ground motion paramters recorded across the world.
+Various attempts were made by individually various institutions.
+The PEER research group had prepared more transperent version of such database.
+The present studies consider this database for development of ground motion prediction model.
+A brief overview of the database and preliminary discussion on data collected are discussed in the following section.
 
 ## PEER Database of Ground Motion
+![Alt Text] ()
+Tern of the centurey, PEER group initiated a large research program to develop Next Generation Attenuation equation, termed as project "NGA".
+The project initially focussed on deelopment of common high-quality ground-motion database which can be accessed by all reserchers around the globe.
+Earthquake ground motion records from various recording stations around the globe were collected and processed using commoon procedure to enure coerency.
+A total of 335 earthquake events with multiple station records were collected and stored at common point. Locations of these ground motion are shown in figure eblow;
+
+## Ground Motion Prediction Models
+Variety of procedures were proposed for prediction of ground motion. The common procedure was empirical method
 
 ## Development of Ground Motion Prediction Model
 
 ## Preliminary Analysis
 
 ## Road Map
+
+## Reference
+
+1. Douglas, J., Aochi, H. A Survey of Techniques for Predicting Earthquake Ground Motions for Engineering Purposes. Surv Geophys 29, 187–220 (2008). https://doi.org/10.1007/s10712-008-9046-y
