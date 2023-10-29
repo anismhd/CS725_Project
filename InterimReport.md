@@ -50,9 +50,33 @@ Earthquake ground motion records from various recording stations around the glob
 A total of 335 earthquake events with multiple station records were collected and stored at common point. Locations of these ground motion are shown in figure eblow;
 
 ## Ground Motion Prediction Models
-Variety of procedures were proposed for prediction of ground motion. The common procedure was empirical method
+Variety of procedures were proposed for prediction of ground motion. 
+The common procedure was empirical method, where functional form of ground motions are estimated through regresssion.
+The functions forms is often expressed in terms of paramters characterising the  earthquake source, travel-path and recording site.
+The common paramters are;
+1. Magnitude of earthquake. This expresses quantity of energy released in log scale.
+2. Distance to source from site.
+3. Site Characteristics
+
+A pictorial image of paramter is shown in figure.
 
 ## Development of Ground Motion Prediction Model
+Multilayer Perceptrons (MLP) are often used in regression applications. The MLP's are very effcient in nonlinear regressions. 
+The general regression is estimation of conditional density model of the form
+
+
+$$ p(y | x; \theta) = N(y | f_{\mu}(x;\theta), f_{\sigma}(x;\theta)^2) $$
+
+where $f_{\mu}(x;\theta)$ predicts the mean, and $f_{\sigma}(x;\theta)^2)$ predicts the variance.
+In ground motion prediction equations, it is common to assume that the variance dependent of the input. 
+This is called heteroskedastic regression.
+The applications of Neural Network for the GMPEs, sofar has been limitted to homoscedastic regression.
+This study would attempt an noval approach to develop an model using Bayesian MLP which capture mean and standard deviation of predictions correctly.
+The advantage of the such model is the ability to estimate confidence interval of prediction, which are often critical in seismic mitigation studies and insurance studies.
+
+### Heteroskedastic Regression
+The traditional MLP by default don’t report the uncertainty of their estimates.
+The uncertaintity build a Bayesian neural network which has two “heads” - that is, two endpoints of the network. One head will predict the value of the estimate, and the other to predict the uncertainty of that estimate. This dual-headed structure allows the model to dynamically adjust its uncertainty estimates, and because it’s a Bayesian network, also captures uncertainty as to what the network parameters should be, leading to more accurate uncertainty estimates.
 
 ## Preliminary Analysis
 
