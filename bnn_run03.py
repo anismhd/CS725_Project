@@ -45,24 +45,49 @@ def datasets_creation2(NN=1001):
 	return torch.from_numpy(x).float(), torch.from_numpy(y).float()
 
 class Model01(PyroModule):
-    def __init__(self, in_dim=2, out_dim=1, hid_dim=5, prior_scale=10.):
+    def __init__(self, in_dim=2, out_dim=1, hid_dim=300, prior_scale=10.):
         super().__init__()
 
         self.activation = nn.ReLU()
-        self.layer1 = PyroModule[nn.Linear](in_dim, hid_dim)  # Input to hidden layer
-        self.layer2 = PyroModule[nn.Linear](hid_dim, out_dim)  # Hidden to output layer
-
-        # Set layer parameters as random variables
+        self.layer1 = PyroModule[nn.Linear](in_dim, hid_dim)
+        self.layer2 = PyroModule[nn.Linear](hid_dim, 200)
+        self.layer3 = PyroModule[nn.Linear](200, 100)
+        self.layer4 = PyroModule[nn.Linear](100, 50)
+        self.layer5 = PyroModule[nn.Linear](50, 10)
+        self.layer6 = PyroModule[nn.Linear](10, 10)
+        self.layer7 = PyroModule[nn.Linear](10, 1)
+        # Layer 01 R.V
         self.layer1.weight = PyroSample(dist.Normal(0., prior_scale).expand([hid_dim, in_dim]).to_event(2))
         self.layer1.bias = PyroSample(dist.Normal(0., prior_scale).expand([hid_dim]).to_event(1))
-        self.layer2.weight = PyroSample(dist.Normal(0., prior_scale).expand([out_dim, hid_dim]).to_event(2))
-        self.layer2.bias = PyroSample(dist.Normal(0., prior_scale).expand([out_dim]).to_event(1))
+        # Layer 02 R.V
+        self.layer2.weight = PyroSample(dist.Normal(0., prior_scale).expand([200, hid_dim]).to_event(2))
+        self.layer2.bias = PyroSample(dist.Normal(0., prior_scale).expand([200]).to_event(1))
+        # Layer 03 R.V
+        self.layer3.weight = PyroSample(dist.Normal(0., prior_scale).expand([100, 200]).to_event(2))
+        self.layer3.bias = PyroSample(dist.Normal(0., prior_scale).expand([100]).to_event(1))
+        # Layer 04 R.V
+        self.layer4.weight = PyroSample(dist.Normal(0., prior_scale).expand([50, 100]).to_event(2))
+        self.layer4.bias = PyroSample(dist.Normal(0., prior_scale).expand([50]).to_event(1))
+        # Layer 05 R.V
+        self.layer5.weight = PyroSample(dist.Normal(0., prior_scale).expand([10, 50]).to_event(2))
+        self.layer5.bias = PyroSample(dist.Normal(0., prior_scale).expand([10]).to_event(1))
+        # Layer 06 R.V
+        self.layer6.weight = PyroSample(dist.Normal(0., prior_scale).expand([10, 10]).to_event(2))
+        self.layer6.bias = PyroSample(dist.Normal(0., prior_scale).expand([10]).to_event(1))
+        # Layer 07 R.V
+        self.layer6.weight = PyroSample(dist.Normal(0., prior_scale).expand([1, 10]).to_event(2))
+        self.layer6.bias = PyroSample(dist.Normal(0., prior_scale).expand([1]).to_event(1))
+
 
     def forward(self, x, y=None):
         x = self.activation(self.layer1(x))
-        mu = self.layer2(x).squeeze()
+        x = self.activation(self.layer2(x))
+        x = self.activation(self.layer3(x))
+        x = self.activation(self.layer4(x))
+        x = self.activation(self.layer5(x))
+        x = self.activation(self.layer6(x))
+        mu = self.layer7(x).squeeze()
         sigma = pyro.sample("sigma", dist.Gamma(.5, 1))  # Infer the response noise
-
         # Sampling model
         with pyro.plate("data", x.shape[0]):
             obs = pyro.sample("obs", dist.Normal(mu, sigma * sigma), obs=y)
